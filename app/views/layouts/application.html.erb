@@ -36,64 +36,13 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-          <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <p id="notice">メッセージがあるとき、ここに表示します。</p>
-          </div>
-
-          <h2 class="sub-header">Books</h2>
-
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>タイトル</th>
-                  <th>著者</th>
-                  <th>出版年月</th>
-                  <th>発売</th>
-                  <th>金額</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>吾輩は猫である</td>
-                  <td>夏目漱石</td>
-                  <td>1905年08月</td>
-                  <td>不可</td>
-                  <td>詳細</td>
-                  <td>編集</td>
-                  <td>削除</td>
-                </tr>
-                <tr>
-                  <td>怪人二十面相</td>
-                  <td>江戸川乱歩</td>
-                  <td>1936年01月</td>
-                  <td>不可</td>
-                  <td>詳細</td>
-                  <td>編集</td>
-                  <td>削除</td>
-                </tr>
-                <tr>
-                  <td>Rubyist Magazine</td>
-                  <td>日本Rubyの会</td>
-                  <td>2004年09月</td>
-                  <td>可能</td>
-                  <td>詳細</td>
-                  <td>編集</td>
-                  <td>削除</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <br>
-
-          <a class="btn btn-default" href="#">新規登録</a>
-
-        </div>
-      </div>
+              <%= yield %>
+              </div>
+         </div>
     </div>
+              
+                     
+
 
     <script src="bootstrap.min.js"></script>
 
