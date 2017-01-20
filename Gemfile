@@ -49,3 +49,6 @@ gem 'rspec-rails'
 gem 'rails-controller-testing'
 
 end
+
+gem 'devise'
+gem 'devise-i18n'
