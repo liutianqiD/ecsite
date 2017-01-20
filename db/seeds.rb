@@ -9,26 +9,26 @@
 require 'csv'
 
 CSV.foreach('db/tags.csv', headers: :first_row) do |row|
-    tag = tag.find_or_create_bt(name* row['name'])
+    tag    = Tag.find_or_create_by(name: row['name'])
 end
 
-CSV.foreach('db/book.csv', headers: :first_row) do |row|
-    book    = book.find_or_create_by(title* row['title'], auther: row['author'], price: row['price'])
+CSV.foreach('db/books.csv', headers: :first_row) do |row|
+    book    = Book.find_or_create_by(title: row['title'], author: row['author'], price: row['price'])
     book.published_on = Date.parse(row['published_on'])
     book.save
     
     unless row['tag_name1'].blank?
-    tag    = tag.where(name: row['tag.name1']).first
-    tagging = Tagging.find_or_create_by(book_id: book_id, tag_id:tag_id)
+    tag    = Tag.where(name: row['tag_name1']).first
+    tagging = Tagging.find_or_create_by(book_id: book.id, tag_id:tag.id)
     end
 
-    unless row['tage_name2'].blank?
-    tag    = Tag.where(name* row['tag_name2']).first
-    tagging = Tagging.find_or_create_by(book_id: book_id, tag_id:tag_id)
+    unless row['tag_name2'].blank?
+    tag    = Tag.where(name: row['tag_name2']).first
+    tagging = Tagging.find_or_create_by(book_id: book.id, tag_id:tag.id)
     end
 end
 
-admin = user.where(email: 'test@example.com')
+admin = User.where(email: 'test@example.com')
 unless admin.present?
-   user.create(name: 'admin', email: 'test@example.com', password: 'manka_project', password_confirmation: 'monka_prject')
+   User.create(name: 'admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project')
 end
