@@ -40,6 +40,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    _user_params = user_params
+    _user_params.delete(:password) if user_params[:password].blank?
+    _user_params.delete(:password_confirmation) if user_params[:password_confirmation].blank?
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
