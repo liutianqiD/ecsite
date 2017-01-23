@@ -30,5 +30,5 @@ end
 
 admin = User.where(email: 'test@example.com')
 unless admin.present?
-   User.create(name: 'admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project')
+   User.create(name: 'admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project', role: 'admin')
 end
